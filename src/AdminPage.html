@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin_page</title>
+    <link rel="stylesheet" href="adminstyle.css">
+    <link rel="icon" type="image/png" href="Files/favicon.png">
+</head>
+<body>
+    <header>
+        <div class="part1">
+            <h1 class="main-header">Admin Page</h1>   
+        </div>  
+    </header>
+
+    <main>
+        <nav>
+            <h2>Navigation</h2>
+            <button type="button" onclick="loadMusic()">Musics</button>
+            <button type="button" onclick="loadUsers()">Users</button>
+            <button type="button" onclick="Searched_songs()">searched Musics</button>
+            <button type="button" id="syncbtn">refresh Database</button>
+        </nav>
+        <div class="home" id="preview">
+            
+        </div>
+    </main>
+
+    <footer class="alpha-footer">
+
+        <div class="footer-content">
+            <div class="footer-sec">
+                <h4>Alpha Player</h4>
+                <p>Your premium sound experience.</p>
+            </div>
+            <div class="footer-links">
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>  
+
+        <div class="footer-bottom">
+            <div class="icons">
+                <img src="/Files/telegram.png">
+                <img src="/Files/twitter.png">
+                <img src="/Files/whatsapp.png">
+                <img src="/Files/mail.png">
+                
+            </div>
+            <a href="#">2026 Alpha Player. All rights reserved.</a>
+        </div>   
+    </footer>
+    <script src="adminscript.js"></script>
+</body>
+</html>

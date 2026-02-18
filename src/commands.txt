@@ -1,0 +1,20 @@
+To start the enviroment ----- docker compose up -d --build
+To reset docker compose down
+         docker compose up -d
+To open the database using the terminal docker compose exec mysql -u root -p
+To run the script docker compose exec audio-player php /var/www/html/"name of the file"
+
+Server: db
+
+Username: root
+
+Password: root_password
+
+
+API account created
+Here are the details of your new API account.
+
+Application name	abenezer mellese
+API key	c9a524dec47cfa41c34c996f73f9227f
+Shared secret	e505f3a05aa477ffddf66b1f05fceb36
+Registered to	babi23322

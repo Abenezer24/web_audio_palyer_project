@@ -1,0 +1,108 @@
+body
+{
+ background-color: #1EBA93;   
+}
+.main-header
+{
+    color: #efeeea;
+    font-size: 3.5vw;
+    letter-spacing: 1vw;
+    font-family: "Comic Sans MS", "Comic Sans", "cursive";
+    border: 2px solid white;
+    border-radius: 10px;
+    font-weight: 100;
+}
+.holder
+{
+    position: absolute;
+    top:15vh;
+    left:15vw;
+    border:2px solid #ffff;
+    width: 70vw;
+    height: 70vh;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+.info1, .info2
+{
+    border:2px solid #ffffff;
+    width: 50%;
+    height: 100%;
+    z-index: 1;
+}
+.data_input1, .data_input2
+{
+    display: flex;
+    flex-direction: column;
+    padding: 1vw;
+    margin: 1vw;
+    font-family: "Comic Sans MS", "Comic Sans", "cursive";
+}
+.ge
+{
+    display: flex;
+    flex-direction: column;
+}
+
+input
+{
+    margin: 2px;
+    border-radius: 10px;
+    height: 25px;
+}
+
+.sub
+{
+    width: 100px;
+    font-family: "Comic Sans MS", "Comic Sans", "cursive";
+}
+
+#log
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#sign
+{
+    overflow-y: scroll;
+}
+a
+{
+    text-decoration: none;
+}
+
+.transitioner {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 50%;
+    height: 100%;
+
+    background-color: #1EBA93;
+    z-index: 2;
+
+    transform: translateX(0%);
+    transition: transform 0.8s ease;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#log:target ~ .transitioner {
+    transform: translateX(0%);
+}
+#sign:target ~ .transitioner {
+    transform: translateX(100%);
+}
+
+
+
+
+
+
+

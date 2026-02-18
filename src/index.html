@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp-LogIn</title>
+    <link rel="stylesheet" href="getstyle.css">
+    <link rel="icon" type="image/png" href="Files/favicon.png">
+</head>
+<body>
+    <div class="holder">
+        <div id="sign"  class="info1">
+            <span class="error"></span>
+            <form  id="sign_up" class="data_input1" method="post"> 
+                <h1>Create Account</h1>
+                <a href="#log">LogIn Instead</a>
+                <span class="error"></span>
+                <label>First name</label>
+                <input type="text" name="fname" required>
+                <label>Last name</label>
+                <input type="text" name="lname" required>
+                <label>Username</label>
+                <input type="text" name="uname" required>
+                <label>Age</label>
+                <input type="date" name="dob" required>
+                <label>Email</label>
+                <input type="email" name="email" required>
+                <label>Phone number</label>
+                <input type="tel" name="phone" required>
+                <label>Create a password</label>
+                <input type="password" name="pwd" required>
+                <label>Confirm password</label>
+                <input type="password" name="cpwd" required>
+                <label class="ge">Gender 
+                    <label><input type="radio" name="gender" value="Male"> Male</label>
+                    <label><input type="radio" name="gender" value="Female"> Female</label>
+                </label>
+                <input class="sub" type="submit" name="register" value="Create">
+            </form>
+        </div>
+
+        <div id="log" class="info2">
+            <form id="log_in" class="data_input2" method="post">
+                <h1>Log In</h1>
+                <label>Username</label>
+                <input type="text" name="uname" required>
+                <label>Password</label>
+                <input type="password" name="pwd" required>
+                <input class="sub" type="submit" value="LogIn" name="access">
+                <a href="#sign">Create Account</a>
+                <span class="errorL"></span>
+            </form>
+        </div>
+        <div class="transitioner"><label class="main-header">Alpha player</label></div>
+    </div>
+    <script src="indexjs.js"></script>
+</body>
+</html>

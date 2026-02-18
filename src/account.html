@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My account</title>
+    <style>
+        body
+        {
+            background-color: #1EBA93;   
+        }
+        .heading
+        {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            margin-bottom:10px;
+            width: 80vw;
+            height: 30vh;
+            margin: 4vh 10vw 4vh 10vw;
+            display: flex;
+            flex-direction: row;
+            border: 1px solid #ffff;
+            gap: 20px;
+            
+        }
+        .contents
+        {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            margin: 4vh 10vw 4vh 10vw;
+            width: 80vw;
+            gap: 20px;
+        }
+        .info_panel {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 40px;
+            border-radius: 20px;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border: 1px solid #ffff;
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+        }
+
+
+        .info_panel label, h1, h2{
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            background: rgba(0,0,0,0.05);
+            padding: 10px;
+            border-radius: 8px;
+            font-family: "Comic Sans MS", "Comic Sans", "cursive";
+            text-transform: capitalize;
+        }
+        .details
+        {
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+            
+        }
+
+        .nav
+        {
+            border-radius: 10px;
+            height: 100vh;
+            width: 20%;
+            background: rgba(255, 255, 255, 0.2);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            border: 1px solid #ffff;
+        }
+        .nav button
+        {
+            background: none;
+            text-align: left;
+            border: 1px solid #ffff;
+            font-family: "Comic Sans MS", "Comic Sans", "cursive";
+            font-size: 20px;
+
+        }
+    </style>
+    <link rel="icon" type="image/png" href="Files/favicon.png">
+</head>
+<body>
+    <div class="heading">
+        <img src="/Files/web.png">
+        <div class="details">
+            <h1 class="name"></h1>
+            <h2 class="username"></h2>
+        </div>
+    </div>
+
+    <div class="contents">
+        <div class="nav">
+            <button type="button" onclick="back_home()">Home</button>
+            <button type="button" onclick="log_out()">Log out</button>   
+            <button type="button" onclick="delete_acc()">Delete account</button>   
+        </div>
+        <div class="info_panel">
+
+        </div>
+        </div>
+         
+    </div>
+    <script>
+        async function users_data()
+        {
+            const name = document.querySelector('.name');
+            const uname = document.querySelector('.username');
+            const panel = document.querySelector('.info_panel');
+
+            try {
+                const response = await fetch('bridge.php?action=active_user');
+                const status = await response.json();
+
+                if (!status.success) {
+                window.location.href = "login.html";
+
+                return;
+                }
+
+                const activeu = status.user;
+                panel.innerHTML = `
+                <label>Email: ${activeu.email}</label>
+                <label>Phone: ${activeu.phone}</label>
+                <label>Date of birth: ${activeu.date_of_birth}</label>
+                <label>Gender: ${activeu.gender}</label>
+                <label>Account created in: ${activeu.created_at}</label>
+                `;
+                name.textContent = `${activeu.first_name} ${activeu.last_name}`;
+                uname.textContent = activeu.username;
+
+            } catch (error) {
+                console.error("Error: ", error);
+            }
+        }
+    
+document.addEventListener("DOMContentLoaded", users_data);
+
+async function back_home(){window.location.href = "home_page.html";}
+async function log_out()
+{
+    try {
+        const response = await fetch("bridge.php?action=logout", {
+            method: "POST"
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+            window.location.href = "index.html";
+        } else {
+            alert(result.message);
+        }
+
+    } catch (error) {
+        console.error("Logout error:", error);
+    }
+
+}
+async function delete_acc()
+{
+    try {
+        const response = await fetch("bridge.php?action=deleting", {
+            method: "POST"
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+            window.location.href = "index.html";
+        } else {
+            alert(result.message);
+        }
+
+    } catch (error) {
+        console.error("Deleteing error:", error);
+    }
+}
+    </script>
+</body>
+</html>

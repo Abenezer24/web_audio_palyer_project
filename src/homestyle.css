@@ -1,0 +1,286 @@
+body
+{
+ background-color: #1EBA93;   
+}
+
+header
+{
+background-color: #A2F5E0;
+border-radius: 10px;
+margin-bottom:10px;
+}
+
+main
+{
+display: flex;
+flex-direction: row;
+justify-content: flex-end;
+}
+
+.main-header
+{
+color: #C79008;
+font-size: 4vw;
+font-family:'Times New Roman', Times, serif;
+letter-spacing: 1vw;
+}
+
+.part1
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.part2
+{
+    position: absolute;
+    top: 50px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+header img{
+    position: absolute;
+    top: 2vh;
+    left: 92vw;
+    width: 4vw;
+    height: 4vw;
+}
+.searchbar
+{
+    display: flex;
+    flex-direction: row;
+    gap: 0px;
+}
+.search
+{
+width:30vw;
+border-top-left-radius: 10px;
+border-bottom-left-radius: 10px;
+margin-bottom: 10px;
+font-size: 2em;
+}
+
+.searchbtn
+{
+border-top-right-radius: 10px;
+border-bottom-right-radius: 10px;
+margin-bottom: 10px;
+font-size: 2em;
+}
+
+.home-btn, .burger-menu
+{
+    background: none;
+    border: none;
+    font-size: 2.5vw;
+    padding: 5px;
+}
+
+.player
+{
+border-radius: 10px;
+right: 4px;
+height: 100vh;
+width:25vw;
+margin-top:10px;
+background: linear-gradient(#A2F5E0, #1EBA93);
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+ 
+.player-img
+{
+    position: relative;
+    top: 40px;
+    border-radius: 10px;
+    width:20vw;
+    height: 25%;
+    background-color: #ffff;
+    margin-bottom: 40px;
+}
+
+.controls
+{
+    display: flex;
+    flex-direction: row;
+    margin-top:10px;  
+    
+}
+.prev, .next, .play, .pause
+{
+    background: none;
+    border: none;
+}
+
+.pause
+{
+display: none;
+}
+
+.prevsvg, .playsvg, .pausesvg, .nextsvg 
+{
+    width: 7vw;
+    height: 7vh;
+}
+
+.home
+{
+border-radius: 10px;
+background: linear-gradient(#A2F5E0, #1EBA93);
+width: 60vw;
+border-radius: 10px;
+margin:10px;
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+gap: 20px;
+padding: 20px;
+}
+
+.playlist
+{
+border-radius: 10px;
+height: 100vh;
+width: 20vw;
+margin-top:10px;
+background: linear-gradient(#A2F5E0, #1EBA93);
+display: flex;
+flex-direction: column;
+align-items: center;
+display: none;
+max-height: 50px;
+overflow: auto;
+flex-wrap: wrap;
+}
+.playlist.active
+{
+    display: block;
+}
+
+
+
+.song-card {
+    background: #f4f4f4;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    cursor: pointer;
+    
+}
+
+.song-card img {
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.tracker
+{
+    border: 2px solid black;
+    border-radius: 10px;
+    height: 8px;
+    width: 90%;
+    background-color: #f0f0f0;
+    margin-top: 20px;
+    position: relative;
+    overflow:hidden;
+    
+}
+
+.tracker::before {
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    width: var(--progress, 0%);
+    background-color: skyblue;
+    transition: left 0.1s linear; 
+}  
+.runner
+{
+    position: absolute;
+    left: 0px;
+    top: -3.5px;
+    border-radius: 50%;
+    background-color:rgb(37, 37, 43);
+    width: 15px;
+    height: 15px;
+    transition: left 0.1s linear; 
+}
+.player {
+    z-index: 100;
+}
+
+
+
+
+
+.alpha-footer {
+    background: #A2F5E0;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 20px;
+    margin-top: 20px;
+    margin-right: 25vw;
+    border-radius: 10px;
+    color: #0d4d3d;
+    font-family: "Comic Sans MS", "Comic Sans", "cursive";
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.footer-sec h4 {
+    margin-bottom: 10px;
+    color: #C79008; 
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #0d4d3d;
+    font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+    color: #C79008;
+}
+
+.footer-socials .icons {
+    font-size: 1.5rem;
+    margin-top: 5px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+}
+.icons img{
+    width: 40px;
+    height: 40px;
+}
+
+
+.footer-bottom {
+    text-align: center;
+    border-top: 2px solid rgba(0, 0, 0, 0.1);
+    padding-top: 10px;
+    opacity: 0.7;
+}
+.footer-bottom a{
+    text-decoration: none;
+    color: #0d4d3d;
+    font-size: 0.9rem;
+}
